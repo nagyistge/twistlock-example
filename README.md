@@ -35,3 +35,12 @@ resources:
         path: /data/logs
         description: blog application server logs
 ```
+
+Container control scripts
+-------------------------
+There are 4 functions that the scripts must implement.
+
+1. Build. In this function the container should be prepared. In case of a docker container it could be the invocation of `docker build`.
+2. Run. In this function the container should be ran. It should read a series of parameters in over stdin. In the case of docker it would then invoke `docker run` with those parameters. It should return a container identifier.
+3. Link. Connect a port of a container to an external service.
+4. Stop. Stop a container.
